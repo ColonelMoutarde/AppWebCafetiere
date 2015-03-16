@@ -5,7 +5,7 @@ class VerifyLogin extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('user','',TRUE);
+        $this->load->model('log_user','',TRUE);
     }
 
     function index()
@@ -13,8 +13,8 @@ class VerifyLogin extends CI_Controller {
         //This method will have the credentials validation
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
+        $this->form_validation->set_rules('username', 'Username', 'trim|xss_clean');
+        $this->form_validation->set_rules('password', 'Password', 'trim|xss_clean|callback_check_database');
 
         if($this->form_validation->run() == FALSE)
         {
@@ -35,7 +35,7 @@ class VerifyLogin extends CI_Controller {
         $username = $this->input->post('username');
 
         //query the database
-        $result = $this->user->login($username, $password);
+        $result = $this->log_user->login($username, $password);
 
         if($result)
         {
@@ -52,7 +52,7 @@ class VerifyLogin extends CI_Controller {
         }
         else
         {
-            $this->form_validation->set_message('check_database', 'Utilisateur ou mot de passe inéxistant.');
+            $this->form_validation->set_message('check_database', 'Utilisateur inéxistant ou mot de passe incorrect.');
             return false;
         }
     }
