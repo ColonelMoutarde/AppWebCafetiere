@@ -48,7 +48,7 @@
         <div class="panel panel-info" >
             <div class="panel-heading">
                 <div class="panel-title">Connexion</div>
-                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Oublie mot de passe ?</a></div>
+                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="mailto:root@westery.eu">Oublie mot de passe ?</a></div>
             </div>
 
             <div style="padding-top:30px" class="panel-body" >

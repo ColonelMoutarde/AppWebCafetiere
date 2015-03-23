@@ -60,9 +60,16 @@
                         </div>
 
                         <div class="form-group" style="margin-bottom: 25px">
-                            <label for="firstname" class="col-md-3 control-label">Nom d'utilisateur</label>
+                            <label for="user" class="col-md-3 control-label">Nom d'utilisateur</label>
                             <div class="col-md-9">
                                 <input type="text" required="required" class="form-control" name="username_r" placeholder="Nom d'utilisateur">
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group" style="margin-bottom: 25px">
+                            <label for="firstname" class="col-md-3 control-label">Prénom</label>
+                            <div class="col-md-9">
+                                <input type="text" required="required" class="form-control" name="firstname_r" placeholder="Prénom">
                             </div>
                         </div>
                         <br />
@@ -83,7 +90,7 @@
                         <div class="form-group" style="margin-bottom: 25px">
                             <!-- Button -->
                             <div class="col-md-offset-3 col-md-9">
-                                <input id="btn-signup" value="Sign up" type="submit" name="register" class="btn btn-info">
+                                <input id="btn-signup" value="S'enregistrer" type="submit" name="register" class="btn btn-info">
                             </div>
                         </div>
                         <br />
