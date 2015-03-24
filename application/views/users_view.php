@@ -6,14 +6,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Tables
+                    <?php echo $title; ?>
                 </h1>
                 <ol class="breadcrumb">
                     <li>
                         <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
                     </li>
                     <li class="active">
-                        <i class="fa fa-table"></i> Tables
+                        <i class="fa fa-table"></i> <?php echo $title; ?>
                     </li>
                 </ol>
             </div>
@@ -21,16 +21,16 @@
         <!-- /.row -->
 
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <h2>Bordered Table</h2>
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>Page</th>
-                            <th>Visits</th>
-                            <th>% New Visits</th>
-                            <th>Revenue</th>
+                            <th>Nom d'utilisateur</th>
+                            <th>Prénom</th>
+                            <th>Email</th>
+                            <th>Est il admin ?</th>
                         </tr>
                         </thead>
                         <tbody>
