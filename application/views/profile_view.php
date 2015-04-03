@@ -30,13 +30,6 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Nom d'utilisateur</label>
-                            <div class="col-sm-10">
-                                <input type="text" placeholder="Nom d'utilisateur" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Prénom</label>
                             <div class="col-sm-4">
                                 <input type="text" placeholder="Prénom" class="form-control">
@@ -45,6 +38,27 @@
                             <label class="col-sm-2 control-label" for="textinput">Nom</label>
                             <div class="col-sm-4">
                                 <input type="text" placeholder="Nom" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Nom d'utilisateur</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="disabledInput" placeholder="<?php echo $username; ?>" class="form-control" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Mot de passe</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="Mot de passe" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Email</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="Email" class="form-control">
                             </div>
                         </div>
 

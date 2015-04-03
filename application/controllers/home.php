@@ -79,6 +79,24 @@ class Home extends CI_Controller {
         }
     }
 
+    function top()
+    {
+        if($this->session->userdata('logged_in'))
+        {
+            $session_data = $this->session->userdata('logged_in');
+            $data['username'] = $session_data['username'];
+            $data['title'] = ucfirst('top consommateur');
+            $this->load->view('home_head', $data);
+            $this->load->view('top_view', $data);
+            $this->load->view('home_foot', $data);
+        }
+        else
+        {
+            //If no session, redirect to login page
+            redirect('login', 'refresh');
+        }
+    }
+
     function logout()
     {
         $this->session->unset_userdata('logged_in');
