@@ -97,27 +97,27 @@
                     </div>
                 </div>
                 </a>
-                <div class="col-md-2 col-lg-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-coffee fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">Grand café</div>
+                <a href="#">
+                    <div class="col-md-2 col-lg-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-coffee fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">Grand café</div>
+                                    </div>
                                 </div>
                             </div>
+                                <div class="panel-footer">
+                                    <span class="pull-left">Lancement mon grand Café</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
                         </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">Lancement mon grand Café</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
