@@ -17,7 +17,7 @@ class Login extends CI_Controller {
         }
         else
         {
-            $this->load->view('login_view');
+            $this->load->view('login_view', 'refresh');
         }
     }
 }

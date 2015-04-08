@@ -5,6 +5,7 @@ class Home extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->model('reg_user');
     }
 
     function index()
@@ -12,7 +13,7 @@ class Home extends CI_Controller {
         if($this->session->userdata('logged_in'))
         {
             $session_data = $this->session->userdata('logged_in');
-            $data['username'] = $session_data['username'];
+            $data['userData'] = $this->reg_user->get_user($session_data['id']);
             $data['title'] = ucfirst($this->uri->uri_string());
             $this->load->view('home_head', $data);
             $this->load->view('home_view', $data);
@@ -30,11 +31,31 @@ class Home extends CI_Controller {
         if($this->session->userdata('logged_in'))
         {
             $session_data = $this->session->userdata('logged_in');
-            $data['username'] = $session_data['username'];
+            $data['userData'] = $this->reg_user->get_user($session_data['id']);
             $data['title'] = ucfirst('mon compte');
             $this->load->view('home_head', $data);
             $this->load->view('profile_view', $data);
             $this->load->view('home_foot', $data);
+        }
+        else
+        {
+            //If no session, redirect to login page
+            redirect('login', 'refresh');
+        }
+    }
+
+    public function update_profile()
+    {
+        if($this->session->userdata('logged_in'))
+        {
+            $session_data = $this->session->userdata('logged_in');
+            if($this->input->post('update_p'))//$_POST["register"];
+            {
+                if($this->reg_user->update_user($session_data['id']))
+                {
+                    redirect('home/profile', 'refresh');
+                }
+            }
         }
         else
         {
@@ -48,7 +69,7 @@ class Home extends CI_Controller {
         if($this->session->userdata('logged_in'))
         {
             $session_data = $this->session->userdata('logged_in');
-            $data['username'] = $session_data['username'];
+            $data['userData'] = $this->reg_user->get_user($session_data['id']);
             $data['title'] = ucfirst('statistiques');
             $this->load->view('home_head', $data);
             $this->load->view('stats_view', $data);
@@ -66,7 +87,7 @@ class Home extends CI_Controller {
         if($this->session->userdata('logged_in'))
         {
             $session_data = $this->session->userdata('logged_in');
-            $data['username'] = $session_data['username'];
+            $data['userData'] = $this->reg_user->get_user($session_data['id']);
             $data['title'] = ucfirst('utilisateurs');
             $this->load->view('home_head', $data);
             $this->load->view('users_view', $data);
@@ -84,7 +105,7 @@ class Home extends CI_Controller {
         if($this->session->userdata('logged_in'))
         {
             $session_data = $this->session->userdata('logged_in');
-            $data['username'] = $session_data['username'];
+            $data['userData'] = $this->reg_user->get_user($session_data['id']);
             $data['title'] = ucfirst('top consommateur');
             $this->load->view('home_head', $data);
             $this->load->view('top_view', $data);
