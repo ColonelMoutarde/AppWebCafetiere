@@ -2,13 +2,13 @@
 
 Class Log_User extends CI_Model
 {
-    function login($username, $password)
+  public function login($username, $password)
     {
-        $this->db->select('id, username, password');
-        $this->db->from('users');
-        $this->db->where('username', $username);
-        $this->db->where('password', MD5($password));
-        $this->db->limit(1);
+        $this->db->select('id, username, password')
+        ->db->from('users')
+        ->db->where('username', $username)
+        ->db->where('password', password_hash($password . 'maSuperChaineQuiSertDeSalage',PASSWORD_DEFAULT))
+        ->db->limit(1);
 
         $query = $this->db->get();
 
@@ -19,4 +19,3 @@ Class Log_User extends CI_Model
         }
     }
 }
-?>
